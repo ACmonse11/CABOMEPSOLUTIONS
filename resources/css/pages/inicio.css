@@ -1,0 +1,109 @@
+/* ========================================
+   PÁGINA DE INICIO
+======================================== */
+
+/* Animación de la línea del hero */
+@keyframes heroLine {
+    from {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+/* Animación del título */
+@keyframes heroTitle {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación de la descripción */
+@keyframes heroDescription {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación del botón */
+@keyframes heroButton {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Indicador de desplazamiento */
+@keyframes scrollIndicator {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+}
+
+/* Clases de animación */
+.animate-line {
+    animation: heroLine 0.8s ease-out forwards;
+}
+
+.animate-title {
+    opacity: 0;
+    animation: heroTitle 0.9s ease-out 0.2s forwards;
+}
+
+.animate-description {
+    opacity: 0;
+    animation: heroDescription 0.9s ease-out 0.45s forwards;
+}
+
+.animate-button {
+    opacity: 0;
+    animation: heroButton 0.8s ease-out 0.7s forwards;
+}
+
+.animate-scroll {
+    animation: scrollIndicator 1.8s ease-in-out infinite;
+}
+
+/* Accesibilidad: reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .animate-line,
+    .animate-title,
+    .animate-description,
+    .animate-button,
+    .animate-scroll {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}

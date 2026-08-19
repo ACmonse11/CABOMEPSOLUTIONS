@@ -1,0 +1,367 @@
+ html {
+            scroll-behavior: smooth;
+        }
+
+        /* BANNER */
+        .banner-imagen {
+            animation: bannerZoom 12s ease-in-out infinite alternate;
+        }
+
+        @keyframes bannerZoom {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.08);
+            }
+        }
+
+        .banner-etiqueta {
+            opacity: 0;
+            animation: bannerElemento 0.8s ease-out 0.1s forwards;
+        }
+
+        .banner-titulo {
+            opacity: 0;
+            animation: bannerElemento 0.9s ease-out 0.3s forwards;
+        }
+
+        .banner-linea {
+            opacity: 0;
+            transform: scaleX(0);
+            animation: bannerLinea 0.8s ease-out 0.55s forwards;
+        }
+
+        .banner-texto {
+            opacity: 0;
+            animation: bannerElemento 0.9s ease-out 0.7s forwards;
+        }
+
+        @keyframes bannerElemento {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bannerLinea {
+            from {
+                opacity: 0;
+                transform: scaleX(0);
+            }
+
+            to {
+                opacity: 1;
+                transform: scaleX(1);
+            }
+        }
+
+        .animacion-scroll {
+            animation: scrollMovimiento 1.8s ease-in-out infinite;
+        }
+
+        @keyframes scrollMovimiento {
+            0% {
+                opacity: 0;
+                transform: translateY(0);
+            }
+
+            40% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(14px);
+            }
+        }
+
+
+        /* MISIÓN Y VISIÓN */
+        .tarjeta-mision-vision {
+            transition:
+                transform 0.5s cubic-bezier(.2, .8, .2, 1),
+                box-shadow 0.5s ease,
+                border-color 0.5s ease;
+        }
+
+        .tarjeta-mision-vision:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 24px 45px rgba(15, 23, 42, 0.12);
+            border-color: rgba(241, 249, 22, 0.25);
+        }
+
+        .icono-mision,
+        .icono-vision {
+            transition:
+                transform 0.5s ease,
+                box-shadow 0.5s ease;
+        }
+
+        .tarjeta-mision-vision:hover .icono-mision,
+        .tarjeta-mision-vision:hover .icono-vision {
+            transform: rotate(7deg) scale(1.1);
+            box-shadow: 0 12px 25px rgba(15, 23, 42, 0.1);
+        }
+
+        .texto-animado {
+            transition: color 0.4s ease;
+        }
+
+        .tarjeta-mision-vision:hover .texto-animado {
+            color: #374151;
+        }
+
+
+        /* IMAGEN SOBRE NOSOTROS */
+        .imagen-nosotros {
+            transition:
+                transform 0.9s cubic-bezier(.2, .8, .2, 1),
+                filter 0.6s ease;
+        }
+
+        .grupo-imagen:hover .imagen-nosotros {
+            transform: scale(1.07);
+            filter: brightness(0.9);
+        }
+
+        .brillo-imagen {
+            position: absolute;
+            top: -50%;
+            left: -70%;
+            width: 40%;
+            height: 200%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transform: rotate(22deg);
+            transition: left 0.9s ease;
+        }
+
+        .grupo-imagen:hover .brillo-imagen {
+            left: 130%;
+        }
+
+        .badge-experiencia {
+            transition:
+                transform 0.4s ease,
+                box-shadow 0.4s ease;
+        }
+
+        .badge-experiencia:hover {
+            transform: translateY(-4px) scale(1.04);
+            box-shadow: 0 18px 35px rgba(234, 88, 12, 0.3);
+        }
+
+
+        /* CARACTERÍSTICAS */
+        .caracteristica {
+            transition:
+                transform 0.4s ease,
+                box-shadow 0.4s ease,
+                border-color 0.4s ease;
+        }
+
+        .caracteristica:hover {
+            transform: translateY(-6px);
+            border-color: rgba(234, 88, 12, 0.3);
+            box-shadow: 0 15px 30px rgba(15, 23, 42, 0.09);
+        }
+
+        .check-icono {
+            transition:
+                transform 0.4s ease,
+                background-color 0.4s ease,
+                color 0.4s ease;
+        }
+
+        .caracteristica:hover .check-icono {
+            transform: rotate(8deg) scale(1.1);
+            background-color: #FDB000;
+            color: white;
+        }
+
+
+        /* BOTÓN */
+        .boton-contacto {
+            transition:
+                transform 0.35s ease,
+                background-color 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+
+        .boton-contacto:hover {
+            transform: translateY(-4px);
+            background-color: #d79702;
+            box-shadow: 0 16px 32px rgba(234, 88, 12, 0.3);
+        }
+
+        .boton-contacto:active {
+            transform: scale(0.96);
+        }
+
+        .brillo-boton {
+            position: absolute;
+            top: 0;
+            left: -120%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.25),
+                transparent
+            );
+            transform: skewX(-20deg);
+            transition: left 0.7s ease;
+        }
+
+        .boton-contacto:hover .brillo-boton {
+            left: 150%;
+        }
+
+
+        /* VALORES */
+        .valor-card {
+            position: relative;
+            overflow: hidden;
+            min-height: 250px;
+            padding: 32px;
+            text-align: center;
+            background: white;
+            border: 1px solid #f3f4f6;
+            border-radius: 18px;
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+            transition:
+                transform 0.5s cubic-bezier(.2, .8, .2, 1),
+                box-shadow 0.5s ease,
+                border-color 0.5s ease;
+        }
+
+        .valor-card::before {
+            content: "";
+            position: absolute;
+            top: -70px;
+            right: -70px;
+            width: 150px;
+            height: 150px;
+            border-radius: 999px;
+            background: rgba(249, 115, 22, 0.08);
+            transition: transform 0.6s ease;
+        }
+
+        .valor-card:hover::before {
+            transform: scale(2);
+        }
+
+        .valor-card:hover {
+            transform: translateY(-12px);
+            border-color: rgba(249, 115, 22, 0.25);
+            box-shadow: 0 24px 45px rgba(15, 23, 42, 0.13);
+        }
+
+        .valor-icono {
+            position: relative;
+            z-index: 1;
+            width: 72px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 22px;
+            border-radius: 18px;
+            background: #fff7ed;
+            transition:
+                transform 0.5s ease,
+                background-color 0.5s ease,
+                box-shadow 0.5s ease;
+        }
+
+        .valor-card:hover .valor-icono {
+            transform: rotate(6deg) scale(1.1);
+            background: #ffedd5;
+            box-shadow: 0 14px 28px rgba(234, 88, 12, 0.18);
+        }
+
+        .valor-card h3 {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 12px;
+            color: #1f2937;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.35;
+            transition: color 0.4s ease;
+        }
+
+        .valor-card:hover h3 {
+            color: #FDB000;
+        }
+
+        .valor-card p {
+            position: relative;
+            z-index: 1;
+            color: #6b7280;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .valor-linea {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, #FDB000, #f59e0b);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .valor-card:hover .valor-linea {
+            transform: scaleX(1);
+        }
+
+
+        /* RESPONSIVE */
+        @media (max-width: 767px) {
+            .banner-imagen {
+                animation: none;
+            }
+
+            .tarjeta-mision-vision:hover,
+            .valor-card:hover,
+            .caracteristica:hover {
+                transform: translateY(-5px);
+            }
+        }
+
+
+        /* REDUCIR MOVIMIENTO */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+
+            .banner-etiqueta,
+            .banner-titulo,
+            .banner-linea,
+            .banner-texto {
+                opacity: 1;
+                transform: none;
+            }
+        }

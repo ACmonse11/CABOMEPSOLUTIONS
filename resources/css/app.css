@@ -1,3 +1,8 @@
+@import "./pages/inicio.css";
+@import "./pages/proyectos.css";
+@import "./pages/contacto.css";
+@import "./pages/quienes.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

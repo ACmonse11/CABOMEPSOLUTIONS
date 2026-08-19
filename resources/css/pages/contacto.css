@@ -1,0 +1,390 @@
+    html {
+        scroll-behavior: smooth;
+    }
+
+
+    /* BANNER */
+    .banner-contacto-img {
+        animation: contactoBannerZoom 13s ease-in-out infinite alternate;
+    }
+
+    @keyframes contactoBannerZoom {
+        from {
+            transform: scale(1);
+        }
+
+        to {
+            transform: scale(1.08);
+        }
+    }
+
+    .banner-contacto-etiqueta {
+        opacity: 0;
+        animation: contactoEntrada 0.8s ease-out 0.1s forwards;
+    }
+
+    .banner-contacto-titulo {
+        opacity: 0;
+        animation: contactoEntrada 0.9s ease-out 0.3s forwards;
+    }
+
+    .banner-contacto-linea {
+        opacity: 0;
+        transform: scaleX(0);
+        animation: contactoLinea 0.8s ease-out 0.55s forwards;
+    }
+
+    .banner-contacto-texto {
+        opacity: 0;
+        animation: contactoEntrada 0.9s ease-out 0.7s forwards;
+    }
+
+    @keyframes contactoEntrada {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes contactoLinea {
+        from {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        to {
+            opacity: 1;
+            transform: scaleX(1);
+        }
+    }
+
+    .contacto-scroll {
+        animation: contactoScroll 1.8s ease-in-out infinite;
+    }
+
+    @keyframes contactoScroll {
+        0% {
+            opacity: 0;
+            transform: translateY(0);
+        }
+
+        40% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+            transform: translateY(14px);
+        }
+    }
+
+
+    /* FORMULARIO */
+    .formulario-contacto {
+        transition:
+            transform 0.5s ease,
+            box-shadow 0.5s ease;
+    }
+
+    .formulario-contacto:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 30px 60px rgba(15, 23, 42, 0.13);
+    }
+
+    .label-contacto {
+        display: block;
+        margin-bottom: 7px;
+        color: #4b5563;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .campo-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        background: #ffffff;
+        transition:
+            border-color 0.3s ease,
+            box-shadow 0.3s ease,
+            transform 0.3s ease;
+    }
+
+    .campo-wrapper:focus-within {
+        border-color: #FDB000;
+        box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.12);
+        transform: translateY(-2px);
+    }
+
+    .campo-icono {
+        position: absolute;
+        left: 15px;
+        color: #9ca3af;
+        font-size: 15px;
+        pointer-events: none;
+        transition:
+            color 0.3s ease,
+            transform 0.3s ease;
+    }
+
+    .campo-wrapper:focus-within .campo-icono {
+        color: #FDB000;
+        transform: scale(1.1);
+    }
+
+    .campo-icono-textarea {
+        top: 15px;
+    }
+
+    .input-contacto {
+        width: 100%;
+        min-height: 48px;
+        padding: 11px 15px 11px 44px;
+        color: #374151;
+        font-size: 14px;
+        background: transparent;
+        border: none;
+        border-radius: 12px;
+        outline: none;
+    }
+
+    .input-contacto::placeholder {
+        color: #9ca3af;
+    }
+
+    .textarea-contacto {
+        min-height: 130px;
+        resize: vertical;
+        padding-top: 14px;
+    }
+
+    .apariencia-select {
+        cursor: pointer;
+    }
+
+
+    /* BOTÓN */
+    .boton-enviar {
+        transition:
+            transform 0.35s ease,
+            background-color 0.35s ease,
+            box-shadow 0.35s ease;
+    }
+
+    .boton-enviar:hover {
+        transform: translateY(-4px);
+        background-color: #FDB000;
+        box-shadow: 0 18px 35px rgba(234, 175, 12, 0.32);
+    }
+
+    .boton-enviar:active {
+        transform: scale(0.97);
+    }
+
+    .brillo-enviar {
+        position: absolute;
+        top: 0;
+        left: -130%;
+        width: 60%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.28),
+            transparent
+        );
+        transform: skewX(-20deg);
+        transition: left 0.7s ease;
+    }
+
+    .boton-enviar:hover .brillo-enviar {
+        left: 150%;
+    }
+
+
+    /* TARJETAS DE CONTACTO */
+    .contacto-card {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 20px;
+        background: #ffffff;
+        border: 1px solid #f3f4f6;
+        border-radius: 16px;
+        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
+        overflow: hidden;
+        transition:
+            transform 0.45s ease,
+            box-shadow 0.45s ease,
+            border-color 0.45s ease;
+    }
+
+    .contacto-card::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(to bottom, #ea580c, #f59e0b);
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: transform 0.45s ease;
+    }
+
+    .contacto-card:hover {
+        transform: translateX(8px);
+        border-color: rgba(234, 88, 12, 0.25);
+        box-shadow: 0 18px 35px rgba(15, 23, 42, 0.1);
+    }
+
+    .contacto-card:hover::before {
+        transform: scaleY(1);
+    }
+
+    .contacto-icono {
+        width: 62px;
+        height: 62px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff7ed;
+        border-radius: 15px;
+        transition:
+            transform 0.4s ease,
+            background-color 0.4s ease;
+    }
+
+    .contacto-card:hover .contacto-icono {
+        transform: rotate(6deg) scale(1.08);
+        background: #ffedd5;
+    }
+
+    .contacto-flecha {
+        margin-left: auto;
+        color: #d1d5db;
+        font-size: 20px;
+        transform: translateX(-5px);
+        opacity: 0;
+        transition:
+            opacity 0.35s ease,
+            transform 0.35s ease,
+            color 0.35s ease;
+    }
+
+    .contacto-card:hover .contacto-flecha {
+        opacity: 1;
+        transform: translateX(0);
+        color: #ea580c;
+    }
+
+
+    /* HORARIO */
+    .horario-card {
+        transition:
+            transform 0.45s ease,
+            box-shadow 0.45s ease;
+    }
+
+    .horario-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 42px rgba(15, 23, 42, 0.22);
+    }
+
+
+    /* REDES SOCIALES */
+    .red-social {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 999px;
+        box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+        transition:
+            transform 0.35s ease,
+            background-color 0.35s ease,
+            border-color 0.35s ease,
+            box-shadow 0.35s ease;
+    }
+
+    .red-social:hover {
+        transform: translateY(-6px) rotate(5deg);
+        background: #ffedd5;
+        border-color: #f97316;
+        box-shadow: 0 14px 28px rgba(234, 88, 12, 0.2);
+    }
+
+    .red-social img {
+        transition: transform 0.35s ease;
+    }
+
+    .red-social:hover img {
+        transform: scale(1.12);
+    }
+
+
+    /* MENSAJE DE ÉXITO */
+    .mensaje-exito {
+        animation: mensajeExito 0.6s ease-out;
+    }
+
+    @keyframes mensajeExito {
+        from {
+            opacity: 0;
+            transform: translateY(-10px) scale(0.97);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+
+    /* RESPONSIVE */
+    @media (max-width: 767px) {
+        .banner-contacto-img {
+            animation: none;
+        }
+
+        .formulario-contacto:hover {
+            transform: none;
+        }
+
+        .contacto-card:hover {
+            transform: translateY(-4px);
+        }
+    }
+
+
+    /* ACCESIBILIDAD */
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+
+        .banner-contacto-etiqueta,
+        .banner-contacto-titulo,
+        .banner-contacto-linea,
+        .banner-contacto-texto {
+            opacity: 1;
+            transform: none;
+        }
+    }
